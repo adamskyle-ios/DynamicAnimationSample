@@ -21,6 +21,8 @@
 		533FAD3218AA6AE00024C3C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533FAD1418AA6AE00024C3C7 /* UIKit.framework */; };
 		533FAD3A18AA6AE00024C3C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 533FAD3818AA6AE00024C3C7 /* InfoPlist.strings */; };
 		533FAD3C18AA6AE00024C3C7 /* DynamicAnimationSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 533FAD3B18AA6AE00024C3C7 /* DynamicAnimationSampleTests.m */; };
+		533FAD4718AA6E4D0024C3C7 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 533FAD4618AA6E4D0024C3C7 /* UIColor+FlatColors.m */; };
+		533FAD4B18AA784B0024C3C7 /* AnimationBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 533FAD4A18AA784B0024C3C7 /* AnimationBehavior.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		533FAD3718AA6AE00024C3C7 /* DynamicAnimationSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicAnimationSampleTests-Info.plist"; sourceTree = "<group>"; };
 		533FAD3918AA6AE00024C3C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		533FAD3B18AA6AE00024C3C7 /* DynamicAnimationSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicAnimationSampleTests.m; sourceTree = "<group>"; };
+		533FAD4518AA6E4D0024C3C7 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
+		533FAD4618AA6E4D0024C3C7 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		533FAD4918AA784B0024C3C7 /* AnimationBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationBehavior.h; sourceTree = "<group>"; };
+		533FAD4A18AA784B0024C3C7 /* AnimationBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationBehavior.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +118,9 @@
 		533FAD1618AA6AE00024C3C7 /* DynamicAnimationSample */ = {
 			isa = PBXGroup;
 			children = (
-				533FAD1F18AA6AE00024C3C7 /* AppDelegate.h */,
-				533FAD2018AA6AE00024C3C7 /* AppDelegate.m */,
+				533FAD4818AA6E550024C3C7 /* Categories */,
+				533FAD4918AA784B0024C3C7 /* AnimationBehavior.h */,
+				533FAD4A18AA784B0024C3C7 /* AnimationBehavior.m */,
 				533FAD2218AA6AE00024C3C7 /* Main.storyboard */,
 				533FAD2518AA6AE00024C3C7 /* ViewController.h */,
 				533FAD2618AA6AE00024C3C7 /* ViewController.m */,
@@ -126,6 +133,8 @@
 		533FAD1718AA6AE00024C3C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				533FAD1F18AA6AE00024C3C7 /* AppDelegate.h */,
+				533FAD2018AA6AE00024C3C7 /* AppDelegate.m */,
 				533FAD1818AA6AE00024C3C7 /* DynamicAnimationSample-Info.plist */,
 				533FAD1918AA6AE00024C3C7 /* InfoPlist.strings */,
 				533FAD1C18AA6AE00024C3C7 /* main.m */,
@@ -150,6 +159,15 @@
 				533FAD3818AA6AE00024C3C7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		533FAD4818AA6E550024C3C7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				533FAD4518AA6E4D0024C3C7 /* UIColor+FlatColors.h */,
+				533FAD4618AA6E4D0024C3C7 /* UIColor+FlatColors.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				533FAD4718AA6E4D0024C3C7 /* UIColor+FlatColors.m in Sources */,
 				533FAD2718AA6AE00024C3C7 /* ViewController.m in Sources */,
 				533FAD2118AA6AE00024C3C7 /* AppDelegate.m in Sources */,
 				533FAD1D18AA6AE00024C3C7 /* main.m in Sources */,
+				533FAD4B18AA784B0024C3C7 /* AnimationBehavior.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
