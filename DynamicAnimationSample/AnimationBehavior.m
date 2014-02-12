@@ -31,6 +31,10 @@
 {
     if (!_collision) {
         _collision = [[UICollisionBehavior alloc] init];
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        CGPoint begin = CGPointMake(0, screenSize.height / 2);
+        CGPoint end = CGPointMake(screenSize.width, screenSize.height / 2);
+        [_collision addBoundaryWithIdentifier:@"collisionMidScreen" fromPoint:begin toPoint:end];
         _collision.translatesReferenceBoundsIntoBoundary = YES;
     }
     return _collision;

@@ -13,14 +13,14 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
-@property (nonatomic, strong) UICollisionBehavior *collision;
 @property (nonatomic, strong) AnimationBehavior *animationBehavior;
+@property (nonatomic) BOOL fallen;
 
 @end
 
 @implementation ViewController
 
-static const CGSize VIEW_SIZE = {50, 50};
+static const CGSize VIEW_SIZE = {40, 40};
 
 - (AnimationBehavior *)animationBehavior
 {
@@ -39,20 +39,27 @@ static const CGSize VIEW_SIZE = {50, 50};
     return _animator;
 }
 
-- (UICollisionBehavior *)collision
-{
-    if (!_collision) {
-        _collision = [[UICollisionBehavior alloc] init];
-        [_collision addBoundaryWithIdentifier:@"collisionMidScreen" fromPoint:CGPointMake(0, self.view.center.y + VIEW_SIZE.width) toPoint:CGPointMake(self.view.frame.size.width, self.view.center.y + VIEW_SIZE.width)];
-        _collision.collisionMode = UICollisionBehaviorModeEverything;
-        _collision.translatesReferenceBoundsIntoBoundary =YES; 
-    }
-    return _collision;
-}
-
 - (IBAction)bounceButton:(UIButton *)sender
 {
-    [self createBounceView];
+    if (self.fallen == YES) {
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        CGPoint begin = CGPointMake(0, screenSize.height / 2);
+        CGPoint end = CGPointMake(screenSize.width, screenSize.height / 2);
+        [self.animationBehavior.collision addBoundaryWithIdentifier:@"bounceBoundary" fromPoint:begin toPoint:end];
+        self.animationBehavior.collision.translatesReferenceBoundsIntoBoundary = YES;
+        self.fallen = NO;
+        [self createBounceView];
+    } else {
+        [self createBounceView];
+
+    }
+}
+
+- (IBAction)fallButton:(UIButton *)sender
+{
+    self.animationBehavior.collision.translatesReferenceBoundsIntoBoundary = NO;
+    [self.animationBehavior.collision removeAllBoundaries];
+    self.fallen = YES;
 }
 
 - (void)createBounceView
@@ -63,17 +70,11 @@ static const CGSize VIEW_SIZE = {50, 50};
     int x = (arc4random()%(int)self.view.bounds.size.width) / VIEW_SIZE.width;
     frame.origin.x = x * VIEW_SIZE.width;
     
-    UIView *dropView = [[UIView alloc] initWithFrame:frame];
-    dropView.backgroundColor = [UIColor randomFlatColor];
-    [self.view addSubview:dropView];
+    UIView *bounceView = [[UIView alloc] initWithFrame:frame];
+    bounceView.backgroundColor = [UIColor randomFlatColor];
+    [self.view addSubview:bounceView];
     
-    [self.animationBehavior addItem:dropView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.animationBehavior addItem:bounceView];
 }
 
 @end

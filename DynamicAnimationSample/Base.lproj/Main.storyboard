@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lij-yW-6rM">
-                                <rect key="frame" x="126" y="518" width="68" height="30"/>
+                                <rect key="frame" x="20" y="518" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Press me!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,11 +26,23 @@
                                     <action selector="bounceButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E5J-yV-hQl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvV-Pb-Ebc">
+                                <rect key="frame" x="215" y="518" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Let them fall">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fallButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Sac-Zg-0cv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Lij-yW-6rM" secondAttribute="bottom" constant="20" symbolic="YES" id="7R2-Q7-xRb"/>
-                            <constraint firstItem="Lij-yW-6rM" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="YCl-pu-jpr"/>
+                            <constraint firstItem="NvV-Pb-Ebc" firstAttribute="baseline" secondItem="Lij-yW-6rM" secondAttribute="baseline" id="E8z-HI-Ktc"/>
+                            <constraint firstItem="Lij-yW-6rM" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="-106" id="YCl-pu-jpr"/>
+                            <constraint firstAttribute="trailing" secondItem="NvV-Pb-Ebc" secondAttribute="trailing" constant="20" symbolic="YES" id="zhX-ND-Ocd"/>
                         </constraints>
                     </view>
                 </viewController>
