@@ -1,1 +1,2 @@
-NOT FUNCTIONAL YET. EVEN THIS README FILE. 
+This is simple sample code for people trying to get a basic understanding of UIDynamicBehavior boundaries.
+I also created a category FlatColors for UIColor to show a very basic understandable use of Objective-C categories.

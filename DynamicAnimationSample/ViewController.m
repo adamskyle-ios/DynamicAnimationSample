@@ -20,6 +20,7 @@
 
 @implementation ViewController
 
+
 static const CGSize VIEW_SIZE = {40, 40};
 
 - (AnimationBehavior *)animationBehavior
